@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(44,152,73);
+    padding: 0 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    margin-right: 30px;
+}
+
+nav li {
+    margin-left: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 10px;
+    display: block;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: rgb(12, 93, 12);
+}
+
+.hero {
+    margin-top: 50px; /* Height of the navbar */
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+fieldset {
+    background-color: green;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    margin-top: 20px; /* Adjusted margin-top */
+}
+
+fieldset legend {
+    color: aliceblue;
+    padding-top: 30px;
+    font-size: larger;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    color: white;
+    display: block;
+    margin-bottom: 10px;
+    align-self: flex-start;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: white;
+    color: green;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: lightgray;
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}

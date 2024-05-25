@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Form</title>
+</head>
+<style>
+    body{
+        background-image: url(food.jpg);
+    display: flex;
+    margin-top: 20px;
+    background-size: cover; 
+    background-repeat: no-repeat;
+    }
+</style>
+<body>
+    <fieldset>
+        <legend>Please fill this form</legend>
+        <form onsubmit="submitForm(event)">
+            <label>Owner Name</label>
+            <input type="text" required>
+            <br><br>
+            <label>Restaurant Name</label>
+            <input type="text" required>
+            <br><br>
+            <label>Contact</label>
+            <input type="text" required>
+            <br><br>
+            <label>Address</label>
+            <textarea name="Address" required></textarea>
+            <br><br>
+            <label>Food Description</label>
+            <textarea name="Description" required></textarea>
+            <br><br>
+            <label>No. of Leftovers</label>
+            <input type="number" required min="1">
+            <br><br>
+
+
+
+            <button type="submit">Submit</button>
+        </form>
+    </fieldset>
+</body>
+</html>

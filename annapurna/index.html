@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annapurna</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <h2 class="logo"><img src="logo.png" width="21%"></h2>
+            <ul>
+                <li><a href="#" onclick="showContent('home')">HOME</a></li>
+                <li><a href="#" onclick="loadContent('donor.html')">DONOR</a></li>
+                <li><a href="#" onclick="showContent('receiver')">RECEIVER</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <div id="home" class="content"></div>
+        <div id="donor" class="content" style="display:none;"></div>
+        <div id="receiver" class="content" style="display:none;">
+            <h1>Receiver Page</h1>
+            <p>This is the receiver page content.</p>
+        </div>
+    </main>
+    <script>
+        function showContent(section) {
+            // Hide all content divs
+            document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
+            // Show the selected content div
+            document.getElementById(section).style.display = 'block';
+        }
+
+        function loadContent(url) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    // Hide all content divs
+                    document.querySelectorAll('.content').forEach(div => div.style.display = 'none');
+                    // Insert the content into the donor div
+                    document.getElementById('donor').innerHTML = data;
+                    // Show the donor div
+                    document.getElementById('donor').style.display = 'block';
+                })
+                .catch(error => console.error('Error loading content:', error));
+        }
+
+        function loadHomeContent() {
+            fetch('home.html')
+                .then(response => response.text())
+                .then(data => {
+                    // Insert the content into the home div
+                    document.getElementById('home').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading home content:', error));
+        }
+
+        // Load home content when the page loads
+        window.onload = loadHomeContent;
+    </script>
+</body>
+</html>
